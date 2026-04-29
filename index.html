@@ -14,12 +14,14 @@
             <img src="images/start.png" onclick="watchStart()">
             <img src="images/reset.png" onclick="watchReset()">
         </div>
+        <span id="displayLap"></span>
     </div>
 
     <script>
 
         let [seconds, minutes, hours] = [0,0,0];
         let displayTime =document.getElementById('displayTime');
+        let displayLap = document.getElementById('displayLap');
         let timer = null;
 
         function stopwatch(){
@@ -39,7 +41,6 @@
 
             displayTime.innerHTML = h +":"+ m +":"+ s;
         }
-
         function watchStart(){
             if(timer==null){
                 clearInterval(timer);
